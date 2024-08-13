@@ -255,7 +255,7 @@ export function App() {
           </div>
         )}
         {/* Main Content */}
-        <div className={`font-semibold md:col-span-3 col-span-6 mx-12 md:pt-4 pt-20 text-2xl text-white items-center `}>
+        <div className={`font-semibold md:col-span-3 col-span-6 mx-12 md:pt-4 pt-10 text-2xl text-white items-center `}>
           {selectedSong && (
             <><motion.div
               className=''
@@ -281,9 +281,9 @@ export function App() {
                   style={{ width: `${(currentTime / duration) * 100}%` }} />
               </div>
               <div className="grid grid-cols-4 md:grid-cols-3 mx-auto md:mx-[6rem] gap-4 md:gap-8 w-[16rem] mt-4">
-                <div className='flex justify-left md:absolute md:-ml-[5rem]  text-white text-2xl'>
+                <div className='flex justify-left md:absolute md:-ml-[5rem] -ml-[1rem] text-white text-2xl'>
                   <button
-                    className="md:flex-none text-white bg-white bg-opacity-15 md:disabled:cursor-not-allowed md:disabled:opacity-80 scale-75 md:scale-90 p-3 rounded-full"
+                    className="md:flex-none text-white bg-white bg-opacity-15 md:disabled:cursor-not-allowed md:disabled:opacity-80 scale-90 md:scale-90 p-3 rounded-full"
                     onClick={() => setIsMenuOpen(prev => !prev)}
                     disabled={window.innerWidth >= 768}
                     
@@ -291,23 +291,23 @@ export function App() {
                     <MenuIcon /> {/* Add a Menu Icon */}
                   </button>
                 </div>
-                <div className='flex col-span-2 md:absolute md:ml-[2rem] justify-center md:scale-100 scale-75'>
+                <div className='flex col-span-2 md:absolute md:ml-[2rem] justify-center md:scale-100 scale-90'>
                   <button onClick={handlePrevious}>
                     <Previous />
                   </button>
                   <button
                     onClick={togglePlayPause}
-                    className="text-white bg-white md:mx-8 mx-6 p-3  md:scale-100 scale-100 rounded-full">
+                    className="text-white bg-white md:mx-8 mx-6 p-3  rounded-full">
                     {isPlaying ? <Pause /> : <Play />}
                   </button>
                   <button onClick={handleNext}>
                     <Next />
                   </button>
                 </div>
-                <div className='flex justify-end md:absolute md:ml-[16rem]'>
+                <div className='flex justify-end md:absolute md:ml-[16rem] -mr-[1rem]'>
                   <button
                     onClick={toggleMute}
-                    className="text-white  bg-white bg-opacity-15 p-3 md:scale-90 scale-75 rounded-full">
+                    className="text-white  bg-white bg-opacity-15 p-3 md:scale-90 scale-90 rounded-full">
                     {isMuted ? (
     <span role="img" aria-label="Unmute"><MuteIcon/></span> // Or use an icon component for unmuted state
   ) : (
