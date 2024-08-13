@@ -255,7 +255,7 @@ export function App() {
           </div>
         )}
         {/* Main Content */}
-        <div className={`font-semibold md:col-span-3 col-span-6 mx-12 md:pt-4 pt-10 text-2xl text-white items-center `}>
+        <div className={`font-semibold md:col-span-3 col-span-6 mx-12 md:pt-4 pt-6 text-2xl text-white items-center `}>
           {selectedSong && (
             <><motion.div
               className=''
@@ -270,14 +270,14 @@ export function App() {
               <img
                 src={`https://cms.samespace.com/assets/${selectedSong.cover}`}
                 alt={selectedSong.name}
-                className="object-fill flex md:w-[26rem] md:h-[26rem] justify-center min-w-[17.5rem] h-[16rem] md:mt-6 mt-3 rounded-md" />
+                className="object-fill md:object-fill flex md:w-[26rem] md:h-[26rem] justify-center w-[20rem] h-[16rem] md:mt-6 mt-3 rounded-md" />
             </motion.div>
             <div
-              className="mt-4 md:w-[26rem] w-[18.4rem] h-1.5 bg-gray-600 rounded cursor-pointer"
+              className="mt-6 mb-4 md:w-[26rem] w-[18.4rem] h-1.5 bg-gray-600  rounded cursor-pointer"
               onClick={handleProgressClick}
             >
                 <div
-                  className="h-full bg-white rounded"
+                  className="h-full bg-white rounded "
                   style={{ width: `${(currentTime / duration) * 100}%` }} />
               </div>
               <div className="grid grid-cols-4 md:grid-cols-3 mx-auto md:mx-[6rem] gap-4 md:gap-8 w-[16rem] mt-4">
