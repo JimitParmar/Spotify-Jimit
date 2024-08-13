@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import ForYou from './components/forYou';
 import TopTracks from './components/topTracks';
-
+import LoadingList from './components/listLoading';
 
 export function App() {
   const [songs, setSongs] = useState([]);
@@ -18,17 +18,21 @@ export function App() {
   const [duration, setDuration] = useState(0);
   const [bgColor, setBgColor] = useState('#000000');
   const [isMenuOpen, setIsMenuOpen] = useState(window.innerWidth < 768); // State for menu toggle
+  const [isLoading, setIsLoading] = useState(true);
 
   const audioRef = useRef(null);
 
+  
   useEffect(() => {
     fetch('https://cms.samespace.com/items/songs')
       .then(response => response.json())
       .then(data => {
         setSongs(data.data);
         setFilteredSongs(data.data);
+        setIsLoading(false);
       })
       .catch(error => console.error('Error Fetching Data', error));
+      setIsLoading(false)
   }, []);
 
   useEffect(() => {
@@ -198,11 +202,16 @@ export function App() {
           </div>
           <div className="md:pt-4">
             <SearchBar onSearch={handleSearch} />
+
+            {isLoading ? (
+              <LoadingList/>
+            ):(
             <Routes>
               <Route path="/" element={<Navigate to="/for-you" />} />
               <Route path="/for-you" element={<ForYou songs={filteredSongs} onSongSelect={handleSongSelect} />} />
               <Route path="/top-tracks" element={<TopTracks songs={filteredSongs} onSongSelect={handleSongSelect} />} />
             </Routes>
+          )}
           </div>
         </div>
         {/* Drawer for Menu */}
@@ -233,10 +242,14 @@ export function App() {
               <SearchBar onSearch={handleSearch} />
               </div>
             <div className="md:pt-4">
+            {isLoading ? (
+              <LoadingList/>
+            ):(
             <Routes>
               <Route path="/for-you" element={<ForYou songs={filteredSongs} onSongSelect={handleSongSelect} />} />
               <Route path="/top-tracks" element={<TopTracks songs={filteredSongs} onSongSelect={handleSongSelect} />} />
             </Routes>
+            )}
           </div>
             </div>
           </div>
