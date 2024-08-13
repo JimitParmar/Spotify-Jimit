@@ -171,7 +171,7 @@ export function App() {
   return (
     <motion.div
       id='bgm'
-      className={`w-full h-screen ${isMenuOpen ? 'overflow-hidden' : ''}`} // Hide overflow when menu is open
+      className={`min-w-screen min-h-screen overflow-y-scroll ${isMenuOpen ? 'overflow-hidden' : ''}`} // Hide overflow when menu is open
       initial={{ background: 'linear-gradient(to right, #000000, black)' }}
       animate={{ background: `linear-gradient(to right, ${bgColor}, black)` }}
       exit={{ background: 'linear-gradient(to right, #000000, black)' }}
