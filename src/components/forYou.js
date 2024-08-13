@@ -2,7 +2,7 @@ import React from 'react';
 
 const ForYou = ({ songs, onSongSelect }) => {
   return (
-    <div className='relative mt-16'>
+    <div className='relative mt-6 md:mt-16'>
       <ul>
         {songs.length === 0 ? (
           <p>No songs found</p>

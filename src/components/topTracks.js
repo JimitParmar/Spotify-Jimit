@@ -5,7 +5,7 @@ const TopTracks = ({ songs, onSongSelect }) => {
   const topTracks = songs.filter(song => song.top_track);
 
   return (
-    <div className='relative mt-16'>
+    <div className='relative mt-6 md:mt-16'>
       <ul>
         {topTracks.length === 0 ? (
           <p>No top tracks found</p>
