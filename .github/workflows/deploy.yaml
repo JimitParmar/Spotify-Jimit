@@ -24,7 +24,7 @@ jobs:
                 tags: jimitp/spotify:latest
 
             - name: Set up AWS CLI
-              uses: roimor/aws-cli-action@v1
+              uses: ItsKarma/aws-cli@v1.70.0
               with:
                 aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

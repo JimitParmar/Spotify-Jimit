@@ -1,5 +1,5 @@
 # Use the official Node.js image
-FROM node:18
+FROM node:18-alpine
 
 # Create and change to the app directory
 WORKDIR /usr/src/app
@@ -14,9 +14,10 @@ COPY . .
 RUN npm run build
 
 RUN npm install -g serve
-CMD ["serve","-s","build"]
+
 
 # Expose the application port
 EXPOSE 3000
 
 # Command to run the application
+CMD ["serve","-s","build"]
