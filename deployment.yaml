@@ -16,7 +16,7 @@ spec:
         image: jimitp/spotify:latest
         resources:
           limits:
-            memory: "512Mi"
-            cpu: "1000m"
+            memory: "4096Mi"
+            cpu: "2000m"
         ports:
         - containerPort: 3000
