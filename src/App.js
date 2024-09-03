@@ -1,12 +1,12 @@
 import './App.css';
-import { Next, Pause, Play, Previous, Spotifylogo, MenuIcon, SoundIcon, MuteIcon} from './components/icon';
-import { SearchBar } from './components/search';
+import { Next, Pause, Play, Previous, Spotifylogo, MenuIcon, SoundIcon, MuteIcon} from './components/icon.js';
+import { SearchBar } from './components/search.js';
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from "framer-motion";
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
-import ForYou from './components/forYou';
-import TopTracks from './components/topTracks';
-import LoadingList from './components/listLoading';
+import ForYou from './components/forYou.js';
+import TopTracks from './components/topTracks.js';
+import LoadingList from './components/listLoading.js';
 
 export function App() {
   const [songs, setSongs] = useState([]);

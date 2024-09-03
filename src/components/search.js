@@ -1,4 +1,4 @@
-import { SearchIcon } from "./icon";
+import { SearchIcon } from "./icon.js";
 import React, {useState} from "react";
 
 

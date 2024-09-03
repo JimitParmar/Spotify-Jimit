@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spotify-deployment
+spec:
+  selector:
+    matchLabels:
+      app: spotify
+  template:
+    metadata:
+      labels:
+        app: spotify
+    spec:
+      containers:
+      - name: spotify
+        image: jimitp/spotify:latest
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 3000
